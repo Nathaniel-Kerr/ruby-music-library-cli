@@ -16,7 +16,7 @@ class Genre
     end
 
     def self.all
-        @@all
+        @@all.uniq
     end
 
     def self.destroy_all

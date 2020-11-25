@@ -42,19 +42,10 @@ class Song
         end
     end
 
-    # def self.find_by_name(name)
-    #     self.all.detect {|song| song.name == name}
-    # end
-
-    # def self.find_or_create_by_name(name)
-    #     self.find_by_name(name) || self.create(name)
-    # end
-
     def self.new_from_filename(filename)
         info = filename.split(" - ")
         artist, name, genre = info[0], info[1], info[2].gsub(".mp3" , "")
 
-        song = self.find_or_create_by_name(song)
         genre = Genre.find_or_create_by_name(genre)
         artist = Artist.find_or_create_by_name(artist)
 
